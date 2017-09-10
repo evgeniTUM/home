@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst myConfig-packages
-  '(helm-orgcard
+  '(all-the-icons
+    all-the-icons-dired
+    helm-orgcard
     helm-proc
     helm-chrome
     minimap)
@@ -73,4 +75,9 @@ Each entry is either:
 (defun myConfig/init-helm-chrome ()
   (use-package helm-proc :defer t))
 
+(defun myConfig/init-all-the-icons ()
+  (use-package all-the-icons :defer t))
+
+(defun myConfig/init-all-the-icons ()
+  (use-package all-the-icons :defer t))
 ;;; packages.el ends here
