@@ -35,7 +35,8 @@
     helm-orgcard
     helm-proc
     helm-chrome
-    minimap)
+    minimap
+    helm-tramp)
   "The list of Lisp packages required by the myConfig layer.
 
 Each entry is either:
@@ -80,4 +81,7 @@ Each entry is either:
 
 (defun myConfig/init-all-the-icons ()
   (use-package all-the-icons :defer t))
+
+(defun myConfig/init-helm-tramp ()
+  (use-package helm-tramp :defer t))
 ;;; packages.el ends here
