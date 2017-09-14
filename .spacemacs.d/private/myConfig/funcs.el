@@ -1,31 +1,4 @@
 
-(defun helm-eshell-last-dirs ()
-  (mapcar (lambda (x) (cons x x))
-          (ring-elements evgeni/eshell-last-dir-ring)))
-
-(defun helm-eshell-last-dirs-actions (actions dir)
-  "Return a list of helm ACTIONS available for this directory."
-  `((,(format "Switch to Directory - %s" dir) . (lambda (dir)
-                                                  (cd dir)
-                                                  (eshell-send-input)))
-    (,(format "Show directory - %s" dir) . pp)))
-
-(setq helm-source-eshell-last-dirs
-      '((name . "Directory history")
-        (init . (lambda ()
-                  (setq evgeni/eshell-last-dir-ring eshell-last-dir-ring)))
-        (candidates-process . helm-eshell-last-dirs)
-        (action-transformer . helm-eshell-last-dirs-actions)))
-
-(defun evgeni/helm-eshell-last-dirs ()
-  "Bring up the directory history of eshell."
-  (interactive)
-  (helm :sources '(helm-source-eshell-last-dirs)
-        :buffer "*helm-directory-history*"))
-
-
-
-
 (defun eshell/up (&optional level)
   "Change directory from one up to a level of folders."
   (let* ((path-level (or level 1))

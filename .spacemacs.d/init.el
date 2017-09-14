@@ -42,7 +42,9 @@ values."
      better-defaults
      org
      markdown
-     shell
+     (shell :variables
+            shell-enable-smart-eshell t
+            shell-default-shell 'eshell)
      imenu-list
 
      semantic
