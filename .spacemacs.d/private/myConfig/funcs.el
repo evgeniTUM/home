@@ -78,11 +78,11 @@ The app is chosen from your OS's preference."
            ((string-equal major-mode "dired-mode") (dired-get-marked-files))
            ((not file) (list (buffer-file-name)))
            (file (list file)))))
-    
+
     (setq doIt (if (<= (length myFileList) 5)
                    t
                  (y-or-n-p "Open more than 5 files? ") ) )
-    
+
     (when doIt
       (cond
        ((string-equal system-type "windows-nt")
@@ -91,3 +91,8 @@ The app is chosen from your OS's preference."
         (mapc (lambda (fPath) (shell-command (format "open \"%s\"" fPath)) )  myFileList) )
        ((string-equal system-type "gnu/linux")
         (mapc (lambda (fPath) (let ((process-connection-type nil)) (start-process "" nil "xdg-open" fPath)) ) myFileList) ) ) ) ) )
+
+(defun eshell/watch-process (process)
+  (switch-to-buffer
+   (term-ansi-make-term "test-ansi" "/bin/bash"
+                        nil "-c" (format "watch %s" process))))

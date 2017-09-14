@@ -79,8 +79,8 @@ Each entry is either:
 (defun myConfig/init-all-the-icons ()
   (use-package all-the-icons :defer t))
 
-(defun myConfig/init-all-the-icons ()
-  (use-package all-the-icons :defer t))
+(defun myConfig/init-all-the-icons-dired ()
+  (use-package all-the-icons-dired :defer t))
 
 (defun myConfig/init-helm-tramp ()
   (use-package helm-tramp :defer t))
