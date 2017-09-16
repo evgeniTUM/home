@@ -36,7 +36,9 @@
     helm-proc
     helm-chrome
     minimap
-    helm-tramp)
+    helm-tramp
+    (pretty-eshell :location local)
+    )
   "The list of Lisp packages required by the myConfig layer.
 
 Each entry is either:
@@ -84,4 +86,33 @@ Each entry is either:
 
 (defun myConfig/init-helm-tramp ()
   (use-package helm-tramp :defer t))
+
+
+(defun myConfig/init-pretty-eshell ()
+  (use-package pretty-eshell
+    :config
+    (progn
+      (require 'magit)
+
+      (esh-section esh-dir
+                   "\xf07c"  ; 
+                   (abbreviate-file-name (eshell/pwd))
+                   '(:foreground "gold" :bold ultra-bold :underline t))
+      (esh-section esh-git
+                   ""
+                   (magit-get-current-branch)
+                   '(:foreground "pink"))
+      (esh-section esh-python
+                   "\xe928"  ; 
+                   pyvenv-virtual-env-name)
+      (esh-section esh-clock
+                   "\xf017"  ; 
+                   (format-time-string "%H:%M" (current-time))
+                   '(:foreground "forest green"))
+      (esh-section esh-num
+                   "\xf0c9"  ; 
+                   (number-to-string esh-prompt-num)
+                   '(:foreground "brown"))
+      (setq eshell-funcs (list esh-dir esh-git esh-python esh-clock esh-num))
+      (setq eshell-prompt-regexp "^└─> "))))
 ;;; packages.el ends here
