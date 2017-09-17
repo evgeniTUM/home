@@ -1,6 +1,3 @@
-[submodule ".spacemacs.d/modules/ekashalk"]
-	path = .spacemacs.d/modules/ekashalk
-	url = https://github.com/ekaschalk/.spacemacs.d.git
 [submodule ".emacs.d"]
 	path = .emacs.d
 	url = https://github.com/syl20bnr/spacemacs.git

@@ -1,7 +1,7 @@
-.*
-*
-!.spacemacs.d
-!.gitignore
-!.gitmodules
-!.bashrc
-!.emacs.d
+/.*
+/*
+!/.spacemacs.d
+!/.gitignore
+!/.gitmodules
+!/.bashrc
+!/.emacs.d
