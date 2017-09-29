@@ -14,3 +14,4 @@ export EDITOR="emacsclient -c"
 export VISUAL="emacsclient -c -a -emacs"
 
 alias emacs="$EDITOR"
+export JAVA_HOME=/usr/lib/jvm/default
