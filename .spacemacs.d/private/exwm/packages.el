@@ -14,12 +14,8 @@
 ;; which require an initialization must be listed explicitly in the list.
 (setq exwm-packages
     '(cl-generic
-      (xelb :location (recipe :fetcher github
-                              :repo "ch11ng/xelb")
-            :step pre)
-      (exwm :location (recipe :fetcher github
-                              :repo "ch11ng/exwm")
-            :step pre)))
+      xelb
+      exwm))
 
 (defun exwm/init-cl-generic ()
   (use-package cl-generic
@@ -120,7 +116,7 @@
       "Togggles full screen for Emacs and X windows"
       (interactive)
       (if exwm--id
-          (if exwm--fullscreen
+          (if (and (boundp 'exwm--fullscreen) exwm--fullscreen)
               (exwm-reset)
             (exwm-layout-set-fullscreen))
         (spacemacs/toggle-maximize-buffer)))
@@ -254,5 +250,15 @@ Can show completions at point for COMMAND using helm or ido"
     ;;    ))
 
     ;; Do not forget to enable EXWM. It will start by itself when things are ready.
-    ;; (exwm-enable)
+    (exwm-enable)
+    (exwm-input-set-key (kbd "<XF86MonBrightnessDown>")
+                        (lambda ()
+                          (interactive)
+                          (shell-command "xbacklight -dec 10")))
+    (exwm-input-set-key (kbd "<XF86MonBrightnessUp>")
+                        (lambda ()
+                          (interactive)
+                          (shell-command "xbacklight -inc 10")))
+    (exwm-input-set-key (kbd "<XF86Launch1>") #'spacemacs/exwm-app-launcher)
+    (exwm-input-set-key (kbd "s-M") #'exwm-workspace-move-window)
     ))

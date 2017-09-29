@@ -11,4 +11,4 @@ xsetroot -cursor_name left_ptr
 xset r rate 200 60
 
 # Start Emacs
-exec dbus-launch --exit-with-session emacs --eval "(exwm-enable)"
+exec dbus-launch --exit-with-session emacs
