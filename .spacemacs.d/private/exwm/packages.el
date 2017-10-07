@@ -261,4 +261,7 @@ Can show completions at point for COMMAND using helm or ido"
                           (shell-command "xbacklight -inc 10")))
     (exwm-input-set-key (kbd "<XF86Launch1>") #'spacemacs/exwm-app-launcher)
     (exwm-input-set-key (kbd "s-M") #'exwm-workspace-move-window)
+    (exwm-input-set-key (kbd "s-t") #'exwm-floating-toggle-floating)
+    (push ?\s-t exwm-input-prefix-keys)
+
     ))
