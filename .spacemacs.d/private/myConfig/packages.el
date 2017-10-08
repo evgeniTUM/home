@@ -4,11 +4,8 @@
     helm-orgcard
     helm-proc
     helm-chrome
-    minimap
-    helm-tramp
     (pretty-eshell :location local)
     dired-du
-    dired-subtree
     ))
 
 (defmacro default-init-for (package)
@@ -19,9 +16,6 @@
 
 (defun myConfig/init-helm-orgcard ()
   (use-package helm-orgcard :defer t))
-
-(defun myConfig/init-minimap ()
-  (use-package minimap :defer t))
 
 (defun myConfig/init-helm-proc ()
   (use-package helm-proc :defer t))
@@ -35,14 +29,8 @@
 (defun myConfig/init-all-the-icons-dired ()
   (use-package all-the-icons-dired :defer t))
 
-(defun myConfig/init-helm-tramp ()
-  (use-package helm-tramp :defer t))
-
 (defun myConfig/init-dired-du ()
   (use-package dired-du :defer t))
-
-(defun myConfig/init-dired-subtree ()
-  (use-package dired-subtree :defer t))
 
 (defun myConfig/init-pretty-eshell ()
   (use-package pretty-eshell
