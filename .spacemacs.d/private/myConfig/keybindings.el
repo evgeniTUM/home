@@ -6,3 +6,6 @@
 (global-set-key (kbd "s->") 'evgeni/next-buffer-same-mode)
 (global-set-key (kbd "s-<") 'evgeni/previous-buffer-same-mode)
 
+(spacemacs/set-leader-keys "o o" 'local-set-key)
+(spacemacs/set-leader-keys "o O" 'global-set-key)
+
