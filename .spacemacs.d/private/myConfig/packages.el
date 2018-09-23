@@ -1,9 +1,8 @@
 (defconst myConfig-packages
   '(all-the-icons
     all-the-icons-dired
+    all-the-icons-ivy
     helm-orgcard
-    helm-proc
-    helm-chrome
     (pretty-eshell :location local)
     dired-du
     ))
@@ -28,6 +27,10 @@
 
 (defun myConfig/init-all-the-icons-dired ()
   (use-package all-the-icons-dired :defer t))
+
+(defun myConfig/init-all-the-icons-ivy ()
+  (use-package all-the-icons-ivy :ensure t
+    :config (all-the-icons-ivy-setup)))
 
 (defun myConfig/init-dired-du ()
   (use-package dired-du :defer t))
