@@ -1,5 +1,6 @@
 (spacemacs/set-leader-keys "b SPC" 'rename-buffer)
 (spacemacs/set-leader-keys "ie" 'eval-and-replace)
+(spacemacs/set-leader-keys "aoC" 'cfw:open-org-calendar)
 
 (global-set-key (kbd "s-.") 'next-buffer)
 (global-set-key (kbd "s-,") 'previous-buffer)

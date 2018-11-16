@@ -5,6 +5,10 @@
     helm-orgcard
     (pretty-eshell :location local)
     dired-du
+    calfw
+    calfw-cal
+    calfw-org
+    alert
     ))
 
 (defmacro default-init-for (package)
@@ -34,6 +38,18 @@
 
 (defun myConfig/init-dired-du ()
   (use-package dired-du :defer t))
+
+(defun myConfig/init-calfw ()
+  (use-package calfw))
+
+(defun myConfig/init-calfw-cal ()
+  (use-package calfw-cal))
+
+(defun myConfig/init-calfw-org ()
+  (use-package calfw-org))
+
+(defun myConfig/init-alert ()
+  (use-package alert))
 
 (defun myConfig/init-pretty-eshell ()
   (use-package pretty-eshell
