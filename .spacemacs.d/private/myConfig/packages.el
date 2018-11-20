@@ -8,6 +8,7 @@
     calfw
     calfw-cal
     calfw-org
+    excorporate
     alert
     ))
 
@@ -50,6 +51,9 @@
 
 (defun myConfig/init-alert ()
   (use-package alert))
+
+(defun myConfig/init-excorporate ()
+  (use-package excorporate))
 
 (defun myConfig/init-pretty-eshell ()
   (use-package pretty-eshell
