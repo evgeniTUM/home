@@ -37,8 +37,7 @@ values."
      ibuffer
      colors
      nlinum
-     (auto-completion :variables
-                      auto-completion-return-key-behavior nil)
+     auto-completion
      better-defaults
      (shell :variables
             shell-default-shell 'shell)
