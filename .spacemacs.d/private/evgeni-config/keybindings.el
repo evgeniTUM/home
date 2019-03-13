@@ -1,6 +1,7 @@
 (spacemacs/set-leader-keys "b SPC" 'rename-buffer)
 (spacemacs/set-leader-keys "ie" 'eval-and-replace)
-(spacemacs/set-leader-keys "ao SPC" 'evgeni/open-my-calendar)
+(spacemacs/set-leader-keys "ao C" 'evgeni/open-my-calendar)
+(spacemacs/set-leader-keys "ao SPC" 'org-switchb)
 (spacemacs/set-leader-keys "ass" 'counsel-switch-to-shell-buffer)
 
 (spacemacs/set-leader-keys "hM" 'helm-descbinds)
