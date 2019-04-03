@@ -40,11 +40,13 @@ values."
      nlinum
      auto-completion
      better-defaults
-     (shell :variables
-            shell-default-shell 'shell)
+     (shell
+      :variables
+      shell-default-shell 'shell)
      imenu-list
-     (org :config
-          (setq org-startup-indented t))
+     (org
+      :config
+      (setq org-startup-indented t))
 
      bibtex
      graphviz
@@ -78,9 +80,10 @@ values."
      syntax-checking
      git
      github
-     (version-control :variables
-                      version-control-diff-tool 'diff-hl
-                      version-control-global-margin t)
+     (version-control
+      :variables
+      version-control-diff-tool 'diff-hl
+      version-control-global-margin t)
 
      restclient
      pdf-tools
@@ -391,7 +394,8 @@ you should place your code here."
     ("~/Nextcloud/org/notes.org" "~/Nextcloud/org/research.org")))
  '(org-ref-bibliography-notes "~/Nextcloud/org/bibliography-notes.org")
  '(org-ref-default-bibliography (quote ("~/Nextcloud/Documents/library.bib")))
- '(org-ref-pdf-directory (quote ("~/Nextcloud/Documents/Mendeley")))
+ '(org-ref-get-pdf-filename-function (quote org-ref-get-mendeley-filename))
+ '(org-ref-pdf-directory "~/Nextcloud/Documents/Mendeley/")
  '(org-refile-targets nil)
  '(org-startup-indented t)
  '(org-todo-keywords
