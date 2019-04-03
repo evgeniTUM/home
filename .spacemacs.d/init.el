@@ -377,14 +377,11 @@ you should place your code here."
  '(excorporate-configuration "evgeni.pavlidis@unibw.de")
  '(global-prettify-symbols-mode t)
  '(indicate-buffer-boundaries (quote left))
- '(initial-scratch-message ";; Codito, ergo sum.")
- '(neo-show-hidden-files nil)
- '(neo-show-updir-line t)
+ '(neo-show-hidden-files nil t)
+ '(neo-show-updir-line t t)
  '(neo-theme (quote icons))
- '(neo-vc-integration (quote (face)))
- '(org-agenda-files
-   (quote
-    ("~/Nextcloud/org/zeiterfassung/2019.org" "/home/evgeni/Nextcloud/org/bibliography.org" "/home/evgeni/Nextcloud/org/knowledge.org" "/home/evgeni/Nextcloud/org/notes.org" "/home/evgeni/Nextcloud/org/organisation.org" "/home/evgeni/Nextcloud/org/other.org" "/home/evgeni/Nextcloud/org/projects.org" "/home/evgeni/Nextcloud/org/protocol.org" "/home/evgeni/Nextcloud/org/research.org" "/home/evgeni/Nextcloud/org/teaching.org")))
+ '(neo-vc-integration (quote (face)) t)
+ '(org-agenda-files (quote ("~/Nextcloud/org")))
  '(org-agenda-include-diary t)
  '(org-archive-location "./archive/%s_archive::")
  '(org-catch-invisible-edits (quote smart))
@@ -392,9 +389,9 @@ you should place your code here."
  '(org-noter-default-notes-file-names
    (quote
     ("~/Nextcloud/org/notes.org" "~/Nextcloud/org/research.org")))
- '(org-ref-bibliography-notes "~/Nextcloud/org/bibliography.org")
+ '(org-ref-bibliography-notes "~/Nextcloud/org/bibliography-notes.org")
  '(org-ref-default-bibliography (quote ("~/Nextcloud/Documents/library.bib")))
- '(org-ref-pdf-directory (quote ("~/Nextcloud/Documents/Archive")))
+ '(org-ref-pdf-directory (quote ("~/Nextcloud/Documents/Mendeley")))
  '(org-refile-targets nil)
  '(org-startup-indented t)
  '(org-todo-keywords
@@ -408,6 +405,7 @@ you should place your code here."
  '(password-cache-expiry 3600)
  '(plantuml-jar-path "~/configuration/libs/plantuml.jar")
  '(python-shell-interpreter "ipython3" t)
+ '(reftex-default-bibliography (quote ("~/Nextcloud/Documents/library.bib")))
  '(tab-width 4)
  '(visual-line-fringe-indicators (quote (nil right-curly-arrow)))
  '(yas-snippet-dirs
