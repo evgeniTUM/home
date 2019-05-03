@@ -42,7 +42,8 @@ values."
      better-defaults
      (shell
       :variables
-      shell-default-shell 'shell)
+      shell-default-shell 'shell
+      shell-default-position 'bottom)
      imenu-list
      (org
       :config
