@@ -388,8 +388,32 @@ you should place your code here."
  '(org-agenda-files (quote ("~/Nextcloud/org")))
  '(org-agenda-include-diary t)
  '(org-archive-location "./archive/%s_archive::")
+ '(org-capture-templates
+   (quote
+    (("p" "Protocol" entry
+      (file+headline "~/Nextcloud/org/notes.org" "Inbox")
+      "* %^{Title}
+Source: %u, %c
+ #+BEGIN_QUOTE
+%i
+#+END_QUOTE
+
+
+%?")
+     ("L" "Protocol Link" entry
+      (file+headline "~/Nextcloud/org/notes.org" "Inbox")
+      "* %? [[%:link][%:description]] 
+Captured On: %U")
+     ("t" "Todo" entry
+      (file+headline "~/Nextcloud/org/notes.org" "Tasks")
+      "* TODO %?
+%i
+%a"))))
  '(org-catch-invisible-edits (quote smart))
  '(org-directory "~/Dropbox/org/")
+ '(org-modules
+   (quote
+    (org-bbdb org-bibtex org-crypt org-docview org-eww org-gnus org-id org-info org-irc org-mhe org-protocol org-rmail org-w3m)))
  '(org-noter-default-notes-file-names
    (quote
     ("~/Nextcloud/org/notes.org" "~/Nextcloud/org/research.org")))
@@ -397,7 +421,7 @@ you should place your code here."
  '(org-ref-default-bibliography (quote ("~/Nextcloud/Documents/library.bib")))
  '(org-ref-get-pdf-filename-function (quote org-ref-get-mendeley-filename))
  '(org-ref-pdf-directory "~/Nextcloud/Documents/Mendeley/")
- '(org-refile-targets nil)
+ '(org-refile-targets (quote ((org-agenda-files :maxlevel . 2))))
  '(org-startup-indented t)
  '(org-todo-keywords
    (quote

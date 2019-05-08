@@ -11,4 +11,6 @@ export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -c"
 export VISUAL="emacsclient -c -a -emacs"
 
+TERM=xterm
+
 alias emacs="$EDITOR"
