@@ -387,6 +387,8 @@ you should place your code here."
  '(neo-vc-integration (quote (face)) t)
  '(org-agenda-files (quote ("~/Nextcloud/org")))
  '(org-agenda-include-diary t)
+ '(org-agenda-todo-ignore-deadlines (quote all))
+ '(org-agenda-todo-ignore-scheduled (quote all))
  '(org-archive-location "./archive/%s_archive::")
  '(org-capture-templates
    (quote
