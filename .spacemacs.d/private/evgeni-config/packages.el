@@ -5,10 +5,6 @@
     helm-orgcard
     (pretty-eshell :location local)
     dired-du
-    calfw
-    calfw-cal
-    calfw-org
-    excorporate
     alert
     ))
 
@@ -40,20 +36,8 @@
 (defun evgeni-config/init-dired-du ()
   (use-package dired-du :defer t))
 
-(defun evgeni-config/init-calfw ()
-  (use-package calfw))
-
-(defun evgeni-config/init-calfw-cal ()
-  (use-package calfw-cal))
-
-(defun evgeni-config/init-calfw-org ()
-  (use-package calfw-org))
-
 (defun evgeni-config/init-alert ()
   (use-package alert))
-
-(defun evgeni-config/init-excorporate ()
-  (use-package excorporate))
 
 (defun evgeni-config/init-pretty-eshell ()
   (use-package pretty-eshell
