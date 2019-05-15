@@ -15,7 +15,6 @@
 (spacemacs/set-leader-keys "ao SPC" 'org-switchb)
 (spacemacs/set-leader-keys "ao h" 'counsel-org-agenda-headlines)
 (spacemacs/set-leader-keys "ao g" 'counsel-org-goto-all)
-(spacemacs/set-leader-keys "ao C" 'evgeni/open-my-calendar)
 
 (spacemacs/set-leader-keys "hM" 'helm-descbinds)
 (spacemacs/set-leader-keys "hm" 'which-key-show-major-mode)
