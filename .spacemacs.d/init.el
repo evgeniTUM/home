@@ -52,6 +52,7 @@ This function should only modify configuration layer settings."
      (org
       :variables
       org-enable-org-journal-support t
+      org-journal-file-type 'monthly
       org-journal-dir "~/Nextcloud/journal"
       org-want-todo-bindings t
       :config
