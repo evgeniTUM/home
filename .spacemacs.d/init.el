@@ -532,6 +532,14 @@ before packages are loaded."
  '(neo-show-updir-line t t)
  '(neo-theme (quote icons))
  '(neo-vc-integration (quote (face)) t)
+ '(org-agenda-clock-consistency-checks
+   (quote
+    (:max-duration "10:00" :min-duration 0 :max-gap "0:15" :gap-ok-around
+                   ("4:00")
+                   :default-face
+                   ((:background "DarkRed")
+                    (:foreground "white"))
+                   :overlap-face nil :gap-face nil :no-end-time-face nil :long-face nil :short-face nil)))
  '(org-agenda-files (quote ("~/Nextcloud/org")))
  '(org-agenda-include-diary t)
  '(org-agenda-todo-ignore-deadlines (quote all))
@@ -569,7 +577,11 @@ Captured On: %U")
 %i
 %a"))))
  '(org-catch-invisible-edits (quote smart))
+ '(org-clock-clocked-in-display (quote both))
+ '(org-clock-display-default-range (quote thismonth))
+ '(org-clock-in-switch-to-state "IN_PROGRESS")
  '(org-clock-persist t)
+ '(org-clock-rounding-minutes 15)
  '(org-confirm-babel-evaluate nil)
  '(org-directory "~/org")
  '(org-download-method (quote attach))
