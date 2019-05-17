@@ -53,7 +53,7 @@ This function should only modify configuration layer settings."
       :variables
       org-enable-org-journal-support t
       org-journal-file-type 'monthly
-      org-journal-dir "~/Nextcloud/journal"
+      org-journal-dir "~/Nextcloud/org/journal"
       org-want-todo-bindings t
       :config
       (setq org-startup-indented t))
@@ -579,15 +579,14 @@ Captured On: %U")
  '(org-catch-invisible-edits (quote smart))
  '(org-clock-clocked-in-display (quote both))
  '(org-clock-display-default-range (quote thismonth))
- '(org-clock-in-switch-to-state "IN_PROGRESS")
  '(org-clock-persist t)
- '(org-clock-rounding-minutes 15)
  '(org-confirm-babel-evaluate nil)
  '(org-directory "~/org")
  '(org-download-method (quote attach))
  '(org-journal-carryover-items "TODO=\"IN_PROGRESS\"|TODO=\"TODO\"")
  '(org-journal-enable-agenda-integration t)
  '(org-journal-file-format "%Y.%m.%d.org")
+ '(org-log-into-drawer t)
  '(org-modules
    (quote
     (org-bbdb org-bibtex org-crypt org-docview org-eww org-gnus org-habit org-id org-info org-irc org-mhe org-protocol org-rmail org-w3m)))
