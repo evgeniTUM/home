@@ -12,9 +12,11 @@
 (spacemacs/set-leader-keys "rm" 'helm-all-mark-rings)
 
 ;; org mode
-(spacemacs/set-leader-keys "ao SPC" 'org-switchb)
+(spacemacs/set-leader-keys "ao SPC" '(lambda () (interactive) (org-agenda nil "x")))
+(spacemacs/set-leader-keys "ao TAB" 'org-switchb)
 (spacemacs/set-leader-keys "ao h" 'counsel-org-agenda-headlines)
 (spacemacs/set-leader-keys "ao g" 'counsel-org-goto-all)
+(spacemacs/set-leader-keys "ao jJ" 'org-journal-new-scheduled-entry)
 
 (spacemacs/set-leader-keys "hM" 'helm-descbinds)
 (spacemacs/set-leader-keys "hm" 'which-key-show-major-mode)
