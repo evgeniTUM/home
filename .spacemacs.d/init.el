@@ -242,10 +242,10 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(monokai
-                         cyberpunk
-                         spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(spacemacs-dark
+                         spacemacs-light
+                         monokai
+                         cyberpunk)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -527,6 +527,7 @@ before packages are loaded."
  '(dired-listing-switches "-al --group-directories-first")
  '(evil-move-cursor-back nil)
  '(evil-want-Y-yank-to-eol nil)
+ '(fci-rule-color "#383838")
  '(global-prettify-symbols-mode t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-tail-colors
@@ -557,6 +558,7 @@ before packages are loaded."
      ("XXX" . "#dc752f")
      ("XXXX" . "#dc752f"))))
  '(indicate-buffer-boundaries (quote left))
+ '(magit-diff-refine-hunk (quote all))
  '(magit-diff-use-overlays nil)
  '(menu-bar-mode nil)
  '(neo-show-hidden-files nil t)
@@ -571,13 +573,25 @@ before packages are loaded."
                    ((:background "DarkRed")
                     (:foreground "white"))
                    :overlap-face nil :gap-face nil :no-end-time-face nil :long-face nil :short-face nil)))
+ '(org-agenda-clockreport-parameter-plist (quote (:link t :maxlevel 4)))
  '(org-agenda-custom-commands
    (quote
     (("x" "Everything...Eevrything"
-      ((agenda "" nil)
-       (tags-todo "Artefact<>\"Task\"+TODO=\"IN_PROGRESS\"" nil)
+      ((agenda ""
+               ((org-agenda-span
+                 (quote day))))
+       (tags-todo "Artefact<>\"Task\"+TODO=\"IN_PROGRESS\""
+                  ((org-agenda-overriding-header "Open Tasks")
+                   (org-agenda-sorting-strategy
+                    (quote
+                     (category-keep)))
+                   (org-agenda-sorting-strategy
+                    (quote
+                     (priority-down)))))
        (tags-todo "Artefact=\"Task\"+TODO=\"IN_PROGRESS\"|Artefact=\"Story\"+TODO=\"OPEN\"|TODO=\"READY\"|TODO=\"IN_REVIEW\""
-                  ((org-agenda-overriding-header "Sprint Board"))))
+                  ((org-agenda-overriding-header "Sprint Board")
+                   (org-tags-match-list-sublevels
+                    (quote indented)))))
       nil nil))))
  '(org-agenda-files
    (quote
@@ -619,8 +633,12 @@ Captured On: %U")
 %a"))))
  '(org-catch-invisible-edits (quote smart))
  '(org-clock-clocked-in-display (quote both))
+ '(org-clock-clocktable-default-properties (quote (:maxlevel 4)))
  '(org-clock-display-default-range (quote thismonth))
  '(org-clock-persist t)
+ '(org-clocktable-defaults
+   (quote
+    (:maxlevel 4 :lang "en" :scope file :block nil :wstart 1 :mstart 1 :tstart nil :tend nil :step nil :stepskip0 nil :fileskip0 nil :tags nil :match nil :emphasize nil :link nil :narrow 40! :indent t :formula nil :timestamp nil :level nil :tcolumns nil :formatter nil)))
  '(org-confirm-babel-evaluate nil)
  '(org-directory "~/org")
  '(org-download-method (quote attach))
@@ -654,7 +672,7 @@ Captured On: %U")
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(purpose-mode t)
- '(python-shell-interpreter "ipython" t)
+ '(python-shell-interpreter "ipython")
  '(reftex-default-bibliography (quote ("~/Nextcloud/Documents/library.bib")))
  '(tab-width 4)
  '(timeclock-mode-line-display t)
