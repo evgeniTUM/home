@@ -9,4 +9,4 @@ done
 
 echo "source $(pwd)/.bashrc" >> ~/.bashrc
 mkdir -p ~/.local/share/applications
-cp $(pwd)/support/org-protocol.desktop ~/.local/share/applications
+cp $(pwd)/support/*.desktop ~/.local/share/applications

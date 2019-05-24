@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-emacsclient org-protocol://capture?template=t
+$EDITOR org-protocol://capture?template=t
