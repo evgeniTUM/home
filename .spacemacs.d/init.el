@@ -529,6 +529,7 @@ before packages are loaded."
  '(evil-want-Y-yank-to-eol nil)
  '(fci-rule-color "#383838")
  '(global-prettify-symbols-mode t)
+ '(global-visual-line-mode t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-tail-colors
    (quote
@@ -540,24 +541,8 @@ before packages are loaded."
      ("#A75B00" . 70)
      ("#F309DF" . 85)
      ("#3C3D37" . 100))))
- '(hl-todo-keyword-faces
-   (quote
-    (("TODO" . "#dc752f")
-     ("NEXT" . "#dc752f")
-     ("THEM" . "#2d9574")
-     ("PROG" . "#4f97d7")
-     ("OKAY" . "#4f97d7")
-     ("DONT" . "#f2241f")
-     ("FAIL" . "#f2241f")
-     ("DONE" . "#86dc2f")
-     ("NOTE" . "#b1951d")
-     ("KLUDGE" . "#b1951d")
-     ("HACK" . "#b1951d")
-     ("TEMP" . "#b1951d")
-     ("FIXME" . "#dc752f")
-     ("XXX" . "#dc752f")
-     ("XXXX" . "#dc752f"))))
  '(indicate-buffer-boundaries (quote left))
+ '(ispell-dictionary "german8")
  '(magit-diff-refine-hunk (quote all))
  '(magit-diff-use-overlays nil)
  '(menu-bar-mode nil)
@@ -588,7 +573,7 @@ before packages are loaded."
                    (org-agenda-sorting-strategy
                     (quote
                      (priority-down)))))
-       (tags-todo "Artefact=\"Task\"+TODO=\"IN_PROGRESS\"|Artefact=\"Story\"+TODO=\"OPEN\"|TODO=\"READY\"|TODO=\"IN_REVIEW\""
+       (tags-todo "Artefact=\"Task\"|Artefact=\"Story\"+TODO=\"OPEN\"|TODO=\"READY\"|TODO=\"IN_REVIEW\""
                   ((org-agenda-overriding-header "Sprint Board")
                    (org-tags-match-list-sublevels
                     (quote indented)))))
@@ -598,6 +583,7 @@ before packages are loaded."
     ("/home/evgeni/Nextcloud/org/bibliography-notes.org" "/home/evgeni/Nextcloud/org/knowledge.org" "/home/evgeni/Nextcloud/org/notes.org" "/home/evgeni/Nextcloud/org/organisation.org" "/home/evgeni/Nextcloud/org/projects.org" "/home/evgeni/Nextcloud/org/protocol.org" "/home/evgeni/Nextcloud/org/research.org" "/home/evgeni/Nextcloud/org/teaching.org" "/home/evgeni/Nextcloud/org/journal/2019.05.17.org")))
  '(org-agenda-include-diary t)
  '(org-agenda-skip-scheduled-if-deadline-is-shown t)
+ '(org-agenda-skip-timestamp-if-deadline-is-shown t)
  '(org-agenda-todo-ignore-deadlines (quote all))
  '(org-agenda-todo-ignore-scheduled (quote all))
  '(org-agenda-window-setup (quote current-window))
@@ -631,7 +617,18 @@ Captured On: %U")
       (file+headline "~/Nextcloud/org/notes.org" "Tasks")
       "* TODO %?
 %i
-%a"))))
+%a")
+     ("s" "Subtask" entry
+      (clock)
+      "* IN_PROGRESS %?
+:PROPERTIES:
+:Artefact: Task
+:END:
+
+%a" :clock-in t)
+     ("o" "Other task" entry
+      (file+headline "~/Nextcloud/org/organisation.org" "Tasks")
+      "* TODO %?" :clock-in t))))
  '(org-catch-invisible-edits (quote smart))
  '(org-clock-clocked-in-display (quote both))
  '(org-clock-clocktable-default-properties (quote (:maxlevel 4)))
@@ -643,6 +640,8 @@ Captured On: %U")
     (:maxlevel 4 :lang "en" :scope file :block nil :wstart 1 :mstart 1 :tstart nil :tend nil :step nil :stepskip0 nil :fileskip0 nil :tags nil :match nil :emphasize nil :link nil :narrow 40! :indent t :formula nil :timestamp nil :level nil :tcolumns nil :formatter nil)))
  '(org-confirm-babel-evaluate nil)
  '(org-directory "~/org")
+ '(org-download-image-html-width 500)
+ '(org-download-image-org-width 500)
  '(org-download-method (quote attach))
  '(org-journal-carryover-items "TODO=\"IN_PROGRESS\"|TODO=\"TODO\"")
  '(org-journal-enable-agenda-integration t)
@@ -670,7 +669,6 @@ Captured On: %U")
     (org-cliplink devdocs org-kanban calfw-ical 2048-game org-journal yasnippet-snippets writeroom-mode visual-fill-column treemacs-projectile treemacs-evil treemacs pfuture symon symbol-overlay string-inflection rjsx-mode prettier-js pippel pipenv password-generator overseer org-brain nameless magit-svn json-navigator hierarchy ivy-yasnippet ivy-xref ivy-rtags ivy-purpose window-purpose importmagic ctable concurrent deferred impatient-mode google-c-style gitignore-templates flycheck-rtags flycheck-package package-lint flycheck-bashate evil-textobj-line evil-org evil-lion evil-goggles evil-cleverparens editorconfig doom-modeline shrink-path counsel-spotify counsel-css company-rtags company-lua centered-cursor-mode browse-at-remote blacken dotenv-mode dash-docs parseedn parseclj a rtags irony org-noter gscholar-bibtex transient lv monky ntlm xcscope powershell nadvice url-http-ntlm soap-client fsm makey discover-my-major excorporate calfw-cal calfw calfw-org w3 org-pdfview w3m ahg monokai-theme-theme disaster company-c-headers cmake-mode clang-format treepy graphql org-mind-map exwm-x ivy-youtube wgrep flyspell-correct-ivy counsel-projectile counsel-dash counsel org-mime csv-mode ghub sesman smex clojure-snippets clj-refactor inflections edn paredit peg cider-eval-sexp-fu cider seq queue clojure-mode yaml-mode elpy emr speed-type helm-dired-recent-dirs helm-dired-history dired+ dired-subtree dired-hacks-utils dired-du xelb exwm sublimity epc xpm helm-youtube zonokai-theme zenburn-theme zen-and-art-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme farmhouse-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme nlinum-relative nlinum dirtree magit-gh-pulls github-search github-clone github-browse-file gist gh marshal logito pcache ht wisi snakemake-mode helm-spotify-plus spotify helm-spotify multi engine-mode wolfram-mode web-mode thrift tagedit stan-mode sql-indent slim-mode scss-mode scad-mode sass-mode qml-mode pug-mode plantuml-mode org-ref pdf-tools key-chord tablist matlab-mode less-css-mode julia-mode helm-css-scss helm-bibtex parsebib haml-mode graphviz-dot-mode emmet-mode company-web web-completion-data biblio biblio-core arduino-mode xkcd selectric-mode swiper all-the-icons-ivy powerline slime spinner org-category-capture alert log4e gntp org-plus-contrib macrostep skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode hydra parent-mode projectile request gitignore-mode fringe-helper git-gutter+ git-gutter flyspell-correct flycheck pkg-info epl flx magit magit-popup git-commit with-editor smartparens iedit anzu evil goto-chg undo-tree highlight diminish dash-functional tern restclient know-your-http-well pos-tip company bind-map bind-key yasnippet packed anaconda-mode pythonic f dash s memoize font-lock+ helm avy helm-core async auto-complete popup system-packages ivy-hydra ivy ace-jump-mode traad spaceline-all-the-icons all-the-icons-dired tide typescript-mode company-quickhelp mmm-mode markdown-toc markdown-mode lua-mode gh-md yascroll el-get zeal-at-point yapfify xterm-color ws-butler winum which-key web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org systemd stickyfunc-enhance srefactor spaceline smeargle slime-company shell-pop restclient-helm restart-emacs ranger rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-download org-bullets open-junk-file ob-restclient ob-http neotree mwim multi-term move-text minimap magit-gitflow lorem-ipsum livid-mode live-py-mode linum-relative link-hint json-mode js2-refactor js-doc insert-shebang info+ indent-guide imenu-list ibuffer-projectile hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-tramp helm-themes helm-swoop helm-pydoc helm-projectile helm-proc helm-orgcard helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-company helm-chrome helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ fuzzy flyspell-correct-helm flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help elisp-slime-nav dumb-jump diff-hl define-word cython-mode company-tern company-statistics company-shell company-restclient company-anaconda common-lisp-snippets column-enforce-mode color-identifiers-mode coffee-mode clean-aindent-mode auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(paradox-github-token t)
  '(password-cache-expiry 3600)
- '(pdf-view-midnight-colors (quote ("#b2b2b2" . "#292b2e")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(purpose-mode t)
