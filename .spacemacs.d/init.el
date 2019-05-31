@@ -95,7 +95,7 @@ This function should only modify configuration layer settings."
       version-control-global-margin t)
 
      restclient
-     pdf-tools
+     pdf
      systemd
      search-engine
      spotify
@@ -306,7 +306,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil then the last auto saved layouts are resumed automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts t
+   dotspacemacs-auto-resume-layouts nil
 
    ;; If non-nil, auto-generate layout name when creating new layouts. Only has
    ;; effect when using the "jump to layout by number" commands. (default nil)
@@ -586,6 +586,8 @@ before packages are loaded."
  '(org-agenda-skip-timestamp-if-deadline-is-shown t)
  '(org-agenda-todo-ignore-deadlines (quote all))
  '(org-agenda-todo-ignore-scheduled (quote all))
+ '(org-agenda-todo-ignore-timestamp (quote all))
+ '(org-agenda-todo-ignore-with-date t)
  '(org-agenda-window-setup (quote current-window))
  '(org-archive-location "./archive/%s_archive::")
  '(org-babel-load-languages
@@ -650,6 +652,7 @@ Captured On: %U")
  '(org-modules
    (quote
     (org-bbdb org-bibtex org-crypt org-docview org-eww org-gnus org-habit org-id org-info org-irc org-mhe org-protocol org-rmail org-w3m)))
+ '(org-noter-auto-save-last-location t)
  '(org-noter-default-notes-file-names
    (quote
     ("~/Nextcloud/org/notes.org" "~/Nextcloud/org/research.org")))
