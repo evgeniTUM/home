@@ -576,7 +576,11 @@ before packages are loaded."
        (tags-todo "Artefact=\"Task\"|Artefact=\"Story\"+TODO=\"OPEN\"|TODO=\"READY\"|TODO=\"IN_REVIEW\""
                   ((org-agenda-overriding-header "Sprint Board")
                    (org-tags-match-list-sublevels
-                    (quote indented)))))
+                    (quote indented))))
+       (tags-todo "Plakat"
+                  ((org-tags-match-list-sublevels
+                    (quote indented))
+                   (org-agenda-overriding-header "Sprint Plakat"))))
       nil nil))))
  '(org-agenda-files
    (quote
