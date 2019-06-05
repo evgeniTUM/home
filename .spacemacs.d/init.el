@@ -686,6 +686,12 @@ Captured On: %U")
      ("Lehre" . 108)
      ("Entwicklung" . 101)
      (:endgroup))))
+ '(org-todo-keyword-faces
+   (quote
+    (("OPEN" . org-habit-alert-face)
+     ("IN_PROGRESS" . org-warning)
+     ("IN_REVIEW" . org-habit-clear-face)
+     ("READY" . org-habit-alert-future-face))))
  '(org-todo-keywords
    (quote
     ((sequence "TODO" "IN_PROGRESS" "|" "DONE")
