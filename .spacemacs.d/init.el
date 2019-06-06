@@ -604,6 +604,7 @@ before packages are loaded."
      (clojure . t)
      (emacs-lisp . t)
      (plantuml . t))))
+ '(org-babel-python-command "python3")
  '(org-capture-templates
    (quote
     (("p" "Protocol" entry
@@ -657,6 +658,10 @@ Captured On: %U")
  '(org-download-image-html-width 500)
  '(org-download-image-org-width 500)
  '(org-download-method (quote attach))
+ '(org-format-latex-options
+   (quote
+    (:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
+                 ("begin" "$1" "$" "$$" "\\(" "\\["))))
  '(org-journal-carryover-items "TODO=\"IN_PROGRESS\"|TODO=\"TODO\"")
  '(org-journal-enable-agenda-integration t)
  '(org-journal-file-format "%Y.%m.%d.org")
@@ -706,7 +711,7 @@ Captured On: %U")
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(purpose-mode t)
- '(python-shell-interpreter "ipython" t)
+ '(python-shell-interpreter "ipython3")
  '(reftex-default-bibliography (quote ("~/Nextcloud/Documents/library.bib")))
  '(tab-width 4)
  '(timeclock-mode-line-display t)
