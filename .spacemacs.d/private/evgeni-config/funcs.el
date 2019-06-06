@@ -81,3 +81,11 @@ The app is chosen from your OS's preference."
   (switch-to-buffer
    (term-ansi-make-term "test-ansi" "/bin/bash"
                         nil "-c" (format "watch %s" process))))
+
+(defun org-journal-find-location ()
+  ;; Open today's journal, but specify a non-nil prefix argument in order to
+  ;; inhibit inserting the heading; org-capture will insert the heading.
+  (org-journal-new-entry t)
+  ;; Position point on the journal's top-level heading so that org-capture
+  ;; will add the new entry as a child entry.
+  (goto-char (point-min)))

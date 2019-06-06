@@ -634,8 +634,10 @@ Captured On: %U")
 
 %a" :clock-in t)
      ("o" "Other task" entry
-      (file+headline "~/Nextcloud/org/notes.org" "Tasks")
-      "* TODO %?" :clock-in t))))
+      (function org-journal-find-location)
+      "* IN_PROGRESS %(format-time-string org-journal-time-format)%^
+            %i
+            %a" :clock-in t :clock-keep t :clock-resume t))))
  '(org-catch-invisible-edits (quote smart))
  '(org-clock-auto-clock-resolution t)
  '(org-clock-clocked-in-display (quote both))
@@ -643,7 +645,7 @@ Captured On: %U")
  '(org-clock-display-default-range (quote thismonth))
  '(org-clock-idle-time 30)
  '(org-clock-in-resume t)
- '(org-clock-out-remove-zero-time-clocks t)
+ '(org-clock-out-remove-zero-time-clocks nil)
  '(org-clock-persist t)
  '(org-clock-report-include-clocking-task t)
  '(org-clock-rounding-minutes 5)
@@ -688,7 +690,7 @@ Captured On: %U")
      (:endgroup))))
  '(org-todo-keyword-faces
    (quote
-    (("OPEN" . org-habit-alert-face)
+    (("OPEN" . org-habit-overdue-face)
      ("IN_PROGRESS" . org-warning)
      ("IN_REVIEW" . org-habit-clear-face)
      ("READY" . org-habit-alert-future-face))))
