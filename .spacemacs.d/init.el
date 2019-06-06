@@ -674,6 +674,7 @@ Captured On: %U")
    (quote
     ("~/Nextcloud/org/notes.org" "~/Nextcloud/org/research.org")))
  '(org-plantuml-jar-path "~/configuration/libs/plantuml.jar")
+ '(org-preview-latex-image-directory "gen/")
  '(org-ref-bibliography-notes "~/Nextcloud/org/bibliography-notes.org")
  '(org-ref-default-bibliography (quote ("~/Nextcloud/Documents/library.bib")))
  '(org-ref-get-pdf-filename-function (quote org-ref-get-mendeley-filename))
