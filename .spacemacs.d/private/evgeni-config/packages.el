@@ -19,14 +19,15 @@
 
 (defun evgeni-config/init-org-clock-convenience ()
   (use-package org-clock-convenience
-    :defer t
-    :hook org-mode
+    :after org-agenda
     :config
     (progn
       (define-key org-agenda-mode-map (kbd "<C-s-up>") 'org-clock-convenience-timestamp-up)
       (define-key org-agenda-mode-map (kbd "<C-s-down>") 'org-clock-convenience-timestamp-down)
-      (define-key org-agenda-mode-map (kbd "<C-s-right>") 'org-clock-convenience-fill-gap)
-      (define-key org-agenda-mode-map (kbd "<C-s-left>") 'org-clock-convenience-fill-gap-both)
+      (define-key org-agenda-mode-map (kbd "<C-s-right>") 'org-clock-convenience-forward-log-line)
+      (define-key org-agenda-mode-map (kbd "<C-s-left>") 'org-clock-convenience-backward-log-line)
+      (define-key org-agenda-mode-map (kbd "<C-s-end>") 'org-clock-convenience-fill-gap)
+      (define-key org-agenda-mode-map (kbd "<C-s-home>") 'org-clock-convenience-fill-gap-both)
       )))
 
 

@@ -680,7 +680,7 @@ Captured On: %U")
     (:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
                  ("begin" "$1" "$" "$$" "\\(" "\\["))))
  '(org-journal-carryover-items "TODO=\"IN_PROGRESS\"|TODO=\"TODO\"")
- '(org-journal-enable-agenda-integration nil)
+ '(org-journal-enable-agenda-integration t)
  '(org-journal-file-format "%Y.%m.%d.org")
  '(org-log-into-drawer t)
  '(org-modules
