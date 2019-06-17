@@ -2,7 +2,7 @@
   '(all-the-icons
     all-the-icons-dired
     all-the-icons-ivy
-    helm-orgcard
+    org-clock-convenience
     (pretty-eshell :location local)
     dired-du
     calfw
@@ -17,14 +17,18 @@
     `(defun ,defsymbol ()
        (use-package ,package-name :defer t))))
 
-(defun myConfig/init-helm-orgcard ()
-  (use-package helm-orgcard :defer t))
+(defun evgeni-config/init-org-clock-convenience ()
+  (use-package org-clock-convenience
+    :defer t
+    :hook org-mode
+    :config
+    (progn
+      (define-key org-agenda-mode-map (kbd "<C-s-up>") 'org-clock-convenience-timestamp-up)
+      (define-key org-agenda-mode-map (kbd "<C-s-down>") 'org-clock-convenience-timestamp-down)
+      (define-key org-agenda-mode-map (kbd "<C-s-right>") 'org-clock-convenience-fill-gap)
+      (define-key org-agenda-mode-map (kbd "<C-s-left>") 'org-clock-convenience-fill-gap-both)
+      )))
 
-(defun myConfig/init-helm-proc ()
-  (use-package helm-proc :defer t))
-
-(defun myConfig/init-helm-chrome ()
-  (use-package helm-proc :defer t))
 
 (defun evgeni-config/init-all-the-icons ()
   (use-package all-the-icons :defer t))
