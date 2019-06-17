@@ -636,6 +636,9 @@ Captured On: %U")
       "* %?
             %i
             %a")
+     ("j" "Journal" entry
+      (file+olp+datetree "~/Nextcloud/org/journal.org")
+      "* %(format-time-string \"%H:%M\") %?")
      ("s" "Subtask (create a subtask for currently clocked in task and start working on it)" entry
       (clock)
       "* IN_PROGRESS %?
@@ -646,12 +649,12 @@ Captured On: %U")
 %a" :clock-in t)
      ("o" "Other task (start working on task saved in journal)" entry
       (file+olp+datetree "~/Nextcloud/org/journal.org")
-      "* IN_PROGRESS %?
+      "* IN_PROGRESS %? %^g
 %i
 %a" :clock-in t :clock-keep t :clock-resume t)
      ("r" "Record other task (clock in and jump to task)" entry
       (file+olp+datetree "~/Nextcloud/org/journal.org")
-      "* IN_PROGRESS %?
+      "* IN_PROGRESS %? %^g
             %i
             %a" :jump-to-captured t :clock-in t :clock-keep t :clock-resume t))))
  '(org-catch-invisible-edits (quote smart))
