@@ -50,9 +50,6 @@ This function should only modify configuration layer settings."
       shell-default-position 'bottom)
      (org
       :variables
-      org-enable-org-journal-support t
-      org-journal-file-type 'daily
-      org-journal-dir "~/Nextcloud/org/journal"
       org-want-todo-bindings t
       :config
       (setq org-startup-indented t))
@@ -643,26 +640,26 @@ Captured On: %U")
 
 %a" :clock-in t)
      ("o" "Other task (start working on task saved in journal)" entry
-      (function org-journal-find-location)
-      "* IN_PROGRESS %(format-time-string org-journal-time-format)%^
-            %i
-            %a" :clock-in t :clock-keep t :clock-resume t)
+      (file+olp+datetree "~/Nextcloud/org/journal.org")
+      "* IN_PROGRESS %?
+%i
+%a" :clock-in t :clock-keep t :clock-resume t)
      ("r" "Record other task (clock in and jump to task)" entry
-      (function org-journal-find-location)
-      "* IN_PROGRESS %(format-time-string org-journal-time-format)%^
+      (file+olp+datetree "~/Nextcloud/org/journal.org")
+      "* IN_PROGRESS %?
             %i
             %a" :jump-to-captured t :clock-in t :clock-keep t :clock-resume t))))
  '(org-catch-invisible-edits (quote smart))
  '(org-clock-auto-clock-resolution t)
  '(org-clock-clocked-in-display (quote both))
  '(org-clock-clocktable-default-properties (quote (:maxlevel 4)))
- '(org-clock-continuously t)
+ '(org-clock-continuously nil)
  '(org-clock-display-default-range (quote today))
  '(org-clock-history-length 10)
  '(org-clock-idle-time 30)
  '(org-clock-in-resume t)
  '(org-clock-mode-line-total (quote current))
- '(org-clock-out-remove-zero-time-clocks nil)
+ '(org-clock-out-remove-zero-time-clocks t)
  '(org-clock-persist t)
  '(org-clock-report-include-clocking-task t)
  '(org-clock-rounding-minutes 5)
@@ -679,9 +676,6 @@ Captured On: %U")
    (quote
     (:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
                  ("begin" "$1" "$" "$$" "\\(" "\\["))))
- '(org-journal-carryover-items "TODO=\"IN_PROGRESS\"|TODO=\"TODO\"")
- '(org-journal-enable-agenda-integration t)
- '(org-journal-file-format "%Y.%m.%d.org")
  '(org-log-into-drawer t)
  '(org-modules
    (quote
