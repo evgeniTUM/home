@@ -631,7 +631,7 @@ Captured On: %U")
       "* TODO %?
 %i
 %a")
-     ("n" "Note" entry
+     ("n" "Notes" entry
       (file+headline "~/Nextcloud/org/notes.org" "Notes")
       "* %?
             %i
@@ -673,7 +673,7 @@ Captured On: %U")
    (quote
     (:maxlevel 4 :lang "en" :scope file :block nil :wstart 1 :mstart 1 :tstart nil :tend nil :step nil :stepskip0 nil :fileskip0 nil :tags nil :match nil :emphasize nil :link nil :narrow 40! :indent t :formula nil :timestamp nil :level nil :tcolumns nil :formatter nil)))
  '(org-confirm-babel-evaluate nil)
- '(org-directory "~/org")
+ '(org-directory "~/Nextcloud/org")
  '(org-download-image-html-width 500)
  '(org-download-image-org-width 500)
  '(org-download-method (quote attach))
@@ -689,13 +689,16 @@ Captured On: %U")
  '(org-noter-default-notes-file-names
    (quote
     ("~/Nextcloud/org/notes.org" "~/Nextcloud/org/research.org")))
+ '(org-outline-path-complete-in-steps nil)
  '(org-plantuml-jar-path "~/configuration/libs/plantuml.jar")
  '(org-preview-latex-image-directory "gen/")
  '(org-ref-bibliography-notes "~/Nextcloud/org/bibliography-notes.org")
  '(org-ref-default-bibliography (quote ("~/Nextcloud/Documents/library.bib")))
  '(org-ref-get-pdf-filename-function (quote org-ref-get-mendeley-filename))
  '(org-ref-pdf-directory "~/Nextcloud/Documents/Mendeley/")
- '(org-refile-targets (quote ((org-agenda-files :maxlevel . 2))))
+ '(org-refile-targets (quote ((org-agenda-files :maxlevel . 9))))
+ '(org-refile-use-cache nil)
+ '(org-refile-use-outline-path (quote file))
  '(org-show-notification-handler "notify-send")
  '(org-startup-indented t)
  '(org-tag-alist
