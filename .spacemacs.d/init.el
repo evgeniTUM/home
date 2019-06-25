@@ -525,7 +525,6 @@ before packages are loaded."
  '(evil-want-Y-yank-to-eol nil)
  '(fci-rule-color "#383838")
  '(global-prettify-symbols-mode t)
- '(global-visual-line-mode t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-tail-colors
    (quote
@@ -676,7 +675,7 @@ Captured On: %U")
    (quote
     (:maxlevel 4 :lang "en" :scope file :block nil :wstart 1 :mstart 1 :tstart nil :tend nil :step nil :stepskip0 nil :fileskip0 nil :tags nil :match nil :emphasize nil :link nil :narrow 40! :indent t :formula nil :timestamp nil :level nil :tcolumns nil :formatter nil)))
  '(org-confirm-babel-evaluate nil)
- '(org-directory "~/Nextcloud/org" t)
+ '(org-directory "~/Nextcloud/org")
  '(org-download-image-html-width 500)
  '(org-download-image-org-width 500)
  '(org-download-method (quote attach))
@@ -767,7 +766,7 @@ Captured On: %U")
     (unspecified "#272822" "#3C3D37" "#F70057" "#F92672" "#86C30D" "#A6E22E" "#BEB244" "#E6DB74" "#40CAE4" "#66D9EF" "#FB35EA" "#FD5FF0" "#74DBCD" "#A1EFE4" "#F8F8F2" "#F8F8F0")))
  '(yas-snippet-dirs
    (quote
-    ("/home/evgeni/.spacemacs.d/snippets" "/home/evgeni/.emacs.d/private/snippets/" "/home/evgeni/.emacs.d/layers/+completion/auto-completion/local/snippets" "/home/evgeni/.emacs.d/elpa/develop/clojure-snippets-20180314.1308/snippets" "/home/evgeni/.emacs.d/elpa/develop/common-lisp-snippets-20180226.1523/snippets" yasnippet-snippets-dir)) t))
+    ("/home/evgeni/.spacemacs.d/snippets" "/home/evgeni/.emacs.d/private/snippets/" "/home/evgeni/.emacs.d/layers/+completion/auto-completion/local/snippets" "/home/evgeni/.emacs.d/elpa/develop/clojure-snippets-20180314.1308/snippets" "/home/evgeni/.emacs.d/elpa/develop/common-lisp-snippets-20180226.1523/snippets" yasnippet-snippets-dir))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
