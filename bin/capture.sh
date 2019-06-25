@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-$EDITOR org-protocol://capture?template=t
+$VISUAL org-protocol://capture?template=t

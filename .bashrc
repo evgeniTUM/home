@@ -8,9 +8,11 @@
 export PATH="$PATH:./node_modules/.bin:$(dirname $BASH_SOURCE)/bin"
 
 export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -nc -a ''"
-export VISUAL="emacsclient -c -a -emacs"
+export EDITOR="emacsclient -nw -a '' "
+export VISUAL="emacsclient -a ''"
 
 TERM=xterm
 
 alias emacs="$EDITOR"
+alias ee="$EDITOR"
+alias eg="$VISUAL"
