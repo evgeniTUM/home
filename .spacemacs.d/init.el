@@ -564,8 +564,9 @@ before packages are loaded."
                   ((org-agenda-overriding-header "Sprint Board")
                    (org-tags-match-list-sublevels
                     (quote indented))))
-       (tags "WEITER_SO|MASSNAHME"
-             ((org-agenda-overriding-header "Plakat"))))
+       (tags "Weiter_so|Massnahme|Aktion"
+             ((org-agenda-overriding-header "Plakat")
+              (org-agenda-prefix-format "  %T: "))))
       nil nil))))
  '(org-agenda-files "~/Nextcloud/org/agenda.files")
  '(org-agenda-include-diary t)
@@ -630,6 +631,7 @@ Captured On: %U")
       "* IN_PROGRESS %? %^g" :jump-to-captured t :clock-in t :clock-keep t :clock-resume t))))
  '(org-catch-invisible-edits (quote smart))
  '(org-clock-auto-clock-resolution t)
+ '(org-clock-clocked-in-display (quote both))
  '(org-clock-clocktable-default-properties (quote (:maxlevel 4)))
  '(org-clock-history-length 10)
  '(org-clock-idle-time 30)
