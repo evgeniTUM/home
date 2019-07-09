@@ -28,6 +28,7 @@
       (define-key org-agenda-mode-map (kbd "<C-s-left>") 'org-clock-convenience-backward-log-line)
       (define-key org-agenda-mode-map (kbd "<C-s-end>") 'org-clock-convenience-fill-gap)
       (define-key org-agenda-mode-map (kbd "<C-s-home>") 'org-clock-convenience-fill-gap-both)
+      (define-key org-agenda-mode-map (kbd "<C-s-insert>") 'org-clock-convenience-goto-ts)
       )))
 
 

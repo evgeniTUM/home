@@ -41,7 +41,7 @@ This function should only modify configuration layer settings."
      nlinum
      (auto-completion
       :variables
-      auto-completion-tab-key-behavior 'complete
+      auto-completion-tab-key-behavior nil
       auto-completion-return-key-behavior nil)
      better-defaults
      (shell
@@ -617,6 +617,9 @@ Captured On: %U")
      ("j" "Journal" entry
       (file+olp+datetree "~/Nextcloud/org/journal.org")
       "* %(format-time-string \"%H:%M\") %?")
+     ("J" "Journal record" entry
+      (file+olp+datetree "~/Nextcloud/org/journal.org")
+      "* %?" :time-prompt t)
      ("s" "Subtask (create a subtask for currently clocked in task and start working on it)" entry
       (clock)
       "* IN_PROGRESS %?
