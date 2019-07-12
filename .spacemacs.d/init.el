@@ -609,12 +609,12 @@ Captured On: %U")
       "* TODO %?
 %i
 %a")
-     ("n" "Notes" entry
+     ("n" "Note" entry
       (file+headline "~/Nextcloud/org/notes.org" "Notes")
       "* %?
             %i
             %a")
-     ("j" "Journal" entry
+     ("j" "Journal entry" entry
       (file+olp+datetree "~/Nextcloud/org/journal.org")
       "* %(format-time-string \"%H:%M\") %?")
      ("J" "Journal record" entry
@@ -628,10 +628,10 @@ Captured On: %U")
 :END:" :clock-in t)
      ("o" "Other task (start working on task saved in journal)" entry
       (file+olp+datetree "~/Nextcloud/org/journal.org")
-      "* IN_PROGRESS %? %^g" :clock-in t :clock-keep t :clock-resume t)
+      "* IN_PROGRESS %? %^g" :clock-in t)
      ("r" "Record other task (clock in and jump to task)" entry
       (file+olp+datetree "~/Nextcloud/org/journal.org")
-      "* IN_PROGRESS %? %^g" :jump-to-captured t :clock-in t :clock-keep t :clock-resume t))))
+      "* IN_PROGRESS %? %^g" :jump-to-captured t :clock-in t))))
  '(org-catch-invisible-edits (quote smart))
  '(org-clock-auto-clock-resolution t)
  '(org-clock-clocked-in-display (quote both))
